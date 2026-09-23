@@ -1,0 +1,45 @@
+import { useState } from 'react'
+import './App.css'
+import Layout from './components/Layout'
+import Modal from './components/Modal'
+import type { Job } from './data'
+import Home from './pages/Home'
+import Jobs from './pages/Jobs'
+import Training from './pages/Training'
+import Events from './pages/Events'
+import Certification from './pages/Certification'
+import News from './pages/News'
+import Account from './pages/Account'
+import Admin from './pages/Admin'
+
+type Page = 'home' | 'jobs' | 'training' | 'events' | 'certification' | 'news' | 'account' | 'admin'
+type ModalType = 'login' | 'apply' | 'register' | 'verify' | null
+
+export default function App() {
+  const [page, setPage] = useState<Page>('home')
+  const [modal, setModal] = useState<ModalType>(null)
+  const [loggedIn, setLoggedIn] = useState(() => localStorage.getItem('career-user') === 'true')
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null)
+  const [message, setMessage] = useState('')
+
+  const navigate = (nextPage: Page) => { setPage(nextPage); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+  const showMessage = (text: string) => { setModal(null); setMessage(text); window.setTimeout(() => setMessage(''), 3000) }
+  const register = (name: string) => { setModal('register'); setMessage(name) }
+
+  return <Layout currentPage={page} onNavigate={navigate} onLogin={() => setModal('login')} loggedIn={loggedIn}>
+    {page === 'home' && <Home onNavigate={navigate} onJobSelect={setSelectedJob} />}
+    {page === 'jobs' && <Jobs onJobSelect={setSelectedJob} />}
+    {page === 'training' && <Training onRegister={register} />}
+    {page === 'events' && <Events onRegister={register} />}
+    {page === 'certification' && <Certification onVerify={() => setModal('verify')} onRegister={register} />}
+    {page === 'news' && <News />}
+    {page === 'account' && <Account loggedIn={loggedIn} onLogin={() => setModal('login')} />}
+    {page === 'admin' && <Admin />}
+    {message && <div className="toast">{message}</div>}
+    {selectedJob && <Modal title={selectedJob.title} onClose={() => setSelectedJob(null)}><p><strong>{selectedJob.company}</strong> · {selectedJob.location}</p><p>{selectedJob.description}</p><p>Skills: {selectedJob.skills.join(', ')}</p><button className="button" onClick={() => { setSelectedJob(null); setModal('apply') }}>Apply Now</button></Modal>}
+    {modal === 'login' && <Modal title="Login" onClose={() => setModal(null)}><form onSubmit={(event) => { event.preventDefault(); localStorage.setItem('career-user', 'true'); setLoggedIn(true); showMessage('Login successful') }}><label>Email<input required type="email" placeholder="user@example.com" /></label><label>Password<input required type="password" placeholder="Password" /></label><p className="hint">Demo account: user@example.com</p><button className="button" type="submit">Login</button></form></Modal>}
+    {modal === 'apply' && <Modal title="Apply for job" onClose={() => setModal(null)}><form onSubmit={(event) => { event.preventDefault(); showMessage('Application submitted') }}><label>Full Name<input required placeholder="Your name" /></label><label>Email<input required type="email" placeholder="you@example.com" /></label><label>Resume<input required type="file" /></label><label>Cover Letter<textarea required placeholder="Write a short message" /></label><button className="button" type="submit">Submit Application</button></form></Modal>}
+    {modal === 'register' && <Modal title="Register" onClose={() => setModal(null)}><form onSubmit={(event) => { event.preventDefault(); showMessage('Registration successful') }}><label>Full Name<input required placeholder="Your name" /></label><label>Email<input required type="email" placeholder="you@example.com" /></label><button className="button" type="submit">Confirm Registration</button></form></Modal>}
+    {modal === 'verify' && <Modal title="Verify Certificate" onClose={() => setModal(null)}><form onSubmit={(event) => { event.preventDefault(); showMessage('Certificate NX-2024-8841 is valid') }}><label>Certificate ID<input required placeholder="NX-2024-8841" /></label><button className="button" type="submit">Verify</button></form></Modal>}
+  </Layout>
+}
