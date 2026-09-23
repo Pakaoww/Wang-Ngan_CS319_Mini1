@@ -11,8 +11,9 @@ import Certification from './pages/Certification'
 import News from './pages/News'
 import Account from './pages/Account'
 import Admin from './pages/Admin'
+import About from './pages/About'
 
-type Page = 'home' | 'jobs' | 'training' | 'events' | 'certification' | 'news' | 'account' | 'admin'
+type Page = 'home' | 'jobs' | 'training' | 'events' | 'certification' | 'news' | 'about' | 'account' | 'admin'
 type ModalType = 'login' | 'apply' | 'register' | 'verify' | null
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
     {page === 'events' && <Events onRegister={register} />}
     {page === 'certification' && <Certification onVerify={() => setModal('verify')} onRegister={register} />}
     {page === 'news' && <News />}
+    {page === 'about' && <About />}
     {page === 'account' && <Account loggedIn={loggedIn} onLogin={() => setModal('login')} />}
     {page === 'admin' && <Admin />}
     {message && <div className="toast">{message}</div>}
