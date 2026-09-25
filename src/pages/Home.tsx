@@ -1,5 +1,6 @@
 import { articles, jobs } from "../data";
 import type { Job } from "../data";
+import homepage from "../assets/pigai1.png";
 
 type HomeProps = {
   onNavigate: (page: "jobs" | "training" | "news") => void;
@@ -28,7 +29,7 @@ export default function Home({ onNavigate, onJobSelect }: HomeProps) {
           </button>
         </div>
         <div className="hero-image">
-          <div className="hero-shape">AI</div>
+          <img className="hero-shape" src={homepage} alt="AI illustration" />
         </div>
       </section>
       <section className="container">
