@@ -81,9 +81,9 @@ export default function App() {
           </p>
           <p>{selectedJob.description}</p>
           <p>
-            <strong>ทักษะที่ต้องการ:</strong> {selectedJob.skills.join(", ")}
+            <strong>Required skills:</strong> {selectedJob.skills.join(", ")}
           </p>
-          <h3>คุณสมบัติผู้สมัครงาน</h3>
+          <h3>Candidate qualifications</h3>
           <ul>
             {selectedJob.qualifications.map((qualification) => (
               <li key={qualification}>{qualification}</li>
@@ -134,57 +134,57 @@ export default function App() {
             }}
           >
             <label>
-              คำนำหน้า
+              Title
               <select required defaultValue="">
                 <option value="" disabled>
-                  เลือกคำนำหน้า
+                  Select a title
                 </option>
-                <option>นาย</option>
-                <option>นาง</option>
-                <option>นางสาว</option>
+                <option>Mr.</option>
+                <option>Mrs.</option>
+                <option>Ms.</option>
               </select>
             </label>
             <label>
-              ชื่อ-นามสกุล
-              <input required placeholder="กรอกชื่อ-นามสกุล" />
+              Full name
+              <input required placeholder="Enter your full name" />
             </label>
             <label>
-              เบอร์โทร
+              Phone number
               <input
                 required
                 type="tel"
                 pattern="[0-9]{10}"
                 placeholder="0812345678"
-                title="กรุณากรอกเบอร์โทรศัพท์ 10 หลัก"
+                title="Please enter a 10-digit phone number"
               />
             </label>
             <label>
-              อีเมล
+              Email
               <input required type="email" placeholder="you@example.com" />
             </label>
             <label>
-              ที่อยู่
-              <textarea required placeholder="กรอกที่อยู่ปัจจุบัน" />
+              Address
+              <textarea required placeholder="Enter your current address" />
             </label>
             <label>
-              ระดับการศึกษา
+              Education level
               <select required defaultValue="">
                 <option value="" disabled>
-                  เลือกระดับการศึกษา
+                  Select an education level
                 </option>
-                <option>มัธยมศึกษาตอนปลาย</option>
-                <option>ปวช.</option>
-                <option>ปวส.</option>
-                <option>ปริญญาตรี</option>
-                <option>ปริญญาโท</option>
-                <option>อื่น ๆ</option>
+                <option>High school</option>
+                <option>Vocational Certificate</option>
+                <option>Higher Vocational Certificate</option>
+                <option>Bachelor's degree</option>
+                <option>Master's degree</option>
+                <option>Other</option>
               </select>
             </label>
             <label>
-              ระดับสมรรถนะ AI
+              AI proficiency level
               <select required defaultValue="">
                 <option value="" disabled>
-                  เลือกระดับสมรรถนะ AI
+                  Select an AI proficiency level
                 </option>
                 <option>Beginner</option>
                 <option>Pioneer</option>
@@ -197,14 +197,14 @@ export default function App() {
             </label>
             <label>
               Cover Letter
-              <textarea required placeholder="เขียนข้อความแนะนำตัวสั้น ๆ" />
+              <textarea required placeholder="Write a short introduction" />
             </label>
             <label className="checkbox-label">
               <input required type="checkbox" />
-              ยินยอมให้เก็บ ใช้ และเปิดเผยข้อมูลส่วนบุคคลตามนโยบาย PDPA
+              I consent to the collection, use, and disclosure of my personal data under the PDPA.
             </label>
             <button className="button" type="submit">
-              ส่งใบสมัครงาน
+              Submit application
             </button>
           </form>
         </Modal>
@@ -218,57 +218,57 @@ export default function App() {
             }}
           >
             <label>
-              คำนำหน้า
+              Title
               <select required defaultValue="">
                 <option value="" disabled>
-                  เลือกคำนำหน้า
+                  Select a title
                 </option>
-                <option>นาย</option>
-                <option>นาง</option>
-                <option>นางสาว</option>
+                <option>Mr.</option>
+                <option>Mrs.</option>
+                <option>Ms.</option>
               </select>
             </label>
             <label>
-              ชื่อ-นามสกุล
-              <input required placeholder="กรอกชื่อ-นามสกุล" />
+              Full name
+              <input required placeholder="Enter your full name" />
             </label>
             <label>
-              เบอร์โทร
+              Phone number
               <input
                 required
                 type="tel"
                 pattern="[0-9]{10}"
                 placeholder="0812345678"
-                title="กรุณากรอกเบอร์โทรศัพท์ 10 หลัก"
+                title="Please enter a 10-digit phone number"
               />
             </label>
             <label>
-              อีเมล
+              Email
               <input required type="email" placeholder="you@example.com" />
             </label>
             <label>
-              ที่อยู่
-              <textarea required placeholder="กรอกที่อยู่ปัจจุบัน" />
+              Address
+              <textarea required placeholder="Enter your current address" />
             </label>
             <label>
-              ระดับการศึกษา
+              Education level
               <select required defaultValue="">
                 <option value="" disabled>
-                  เลือกระดับการศึกษา
+                  Select an education level
                 </option>
-                <option>มัธยมศึกษาตอนปลาย</option>
-                <option>ปวช.</option>
-                <option>ปวส.</option>
-                <option>ปริญญาตรี</option>
-                <option>ปริญญาโท</option>
-                <option>อื่น ๆ</option>
+                <option>High school</option>
+                <option>Vocational Certificate</option>
+                <option>Higher Vocational Certificate</option>
+                <option>Bachelor's degree</option>
+                <option>Master's degree</option>
+                <option>Other</option>
               </select>
             </label>
             <label>
-              ระดับสมรรถนะ AI
+              AI proficiency level
               <select required defaultValue="">
                 <option value="" disabled>
-                  เลือกระดับสมรรถนะ AI
+                  Select an AI proficiency level
                 </option>
                 <option>Beginner</option>
                 <option>Pioneer</option>
@@ -276,10 +276,10 @@ export default function App() {
               </select>
             </label>
             <label>
-              ตำแหน่งงานที่ต้องการสมัคร
+              Desired position
               <select required defaultValue="">
                 <option value="" disabled>
-                  เลือกตำแหน่งงาน
+                  Select a position
                 </option>
                 <option>AI Engineer</option>
                 <option>Machine Learning Engineer</option>
@@ -291,7 +291,7 @@ export default function App() {
             </label>
             <label className="checkbox-label">
               <input required type="checkbox" />
-              ยินยอมให้เก็บ ใช้ และเปิดเผยข้อมูลส่วนบุคคลตามนโยบาย PDPA
+              I consent to the collection, use, and disclosure of my personal data under the PDPA.
             </label>
             <button className="button" type="submit">
               Confirm Registration

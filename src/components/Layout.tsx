@@ -26,7 +26,7 @@ const links: { page: Page; label: string }[] = [
   { page: "events", label: "Events" },
   { page: "certification", label: "Certification" },
   { page: "news", label: "News" },
-  { page: "about", label: "เกี่ยวกับเรา" },
+  { page: "about", label: "About Us" },
 ];
 
 export default function Layout({
@@ -78,7 +78,7 @@ export default function Layout({
           <strong>Support</strong>
           <button onClick={() => onNavigate("events")}>Events</button>
           <button onClick={() => onNavigate("news")}>News & Articles</button>
-          <button onClick={() => onNavigate("about")}>เกี่ยวกับเรา</button>
+          <button onClick={() => onNavigate("about")}>About Us</button>
         </div>
       </footer>
     </div>

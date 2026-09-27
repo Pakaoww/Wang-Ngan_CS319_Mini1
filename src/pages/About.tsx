@@ -1,18 +1,18 @@
 const members = [
   {
-    name: "จตุพร สุบิน",
+    name: "Jatuporn Subin",
     email: "jatuporn.subi@bumail.net",
     phone: "0999999999",
   },
   {
-    name: "ณัฐพงศ์ กัลยารัตน์",
+    name: "Nattapong Kanyarat",
     email: "nattapong.kany@bumail.net",
     phone: "0933323005",
   },
   {
-    name: "พิชญุตม์ มารมย์",
-    email: "pichayut.maro@bumail.net",
-    phone: "0999999999",
+    name: "Phichayut Marom",
+    email: "phichayut.maro@bumail.net",
+    phone: "0991871173",
   },
 ];
 
@@ -22,30 +22,30 @@ export default function About() {
       <div className="page-heading">
         <p className="eyebrow">ABOUT US</p>
         <h1>Wang Ngan</h1>
-        <p>ข้อมูลบริษัทและสมาชิกผู้จัดทำโครงงาน</p>
+        <p>Company information and project team members</p>
       </div>
       <div className="grid two-columns">
         <article className="card">
-          <p className="eyebrow">ข้อมูลบริษัท</p>
+          <p className="eyebrow">COMPANY INFORMATION</p>
           <h2>Wang Ngan</h2>
-          <p>ทีมผู้จัดทำโครงงานจากมหาวิทยาลัยกรุงเทพ</p>
+          <p>Project team from Bangkok University</p>
         </article>
         <article className="card">
-          <p className="eyebrow">ที่อยู่</p>
-          <h2>มหาวิทยาลัยกรุงเทพ</h2>
+          <p className="eyebrow">ADDRESS</p>
+          <h2>Bangkok University</h2>
           <p>
-            มหาวิทยาลัยกรุงเทพ วิทยาเขตรังสิต
+            Bangkok University, Rangsit Campus
             <br />
-            9/1 หมู่ 5 ถนนพหลโยธิน ตำบลคลองหนึ่ง
+            9/1 Moo 5, Phahonyothin Road, Khlong Nueng
             <br />
-            อำเภอคลองหลวง จังหวัดปทุมธานี 12120
+            Khlong Luang, Pathum Thani 12120
           </p>
         </article>
       </div>
       <div className="section-title">
         <div>
           <p className="eyebrow">OUR TEAM</p>
-          <h2>ผู้ติดต่อโครงการ</h2>
+          <h2>Project contacts</h2>
         </div>
       </div>
       <div className="grid three-columns">
@@ -53,12 +53,12 @@ export default function About() {
           <article className="card" key={member.email}>
             <h3>{member.name}</h3>
             <p>
-              <strong>อีเมล:</strong>
+              <strong>Email:</strong>
               <br />
               <a href={`mailto:${member.email}`}>{member.email}</a>
             </p>
             <p>
-              <strong>โทรศัพท์:</strong>
+              <strong>Phone:</strong>
               <br />
               <a href={`tel:${member.phone}`}>{member.phone}</a>
             </p>
