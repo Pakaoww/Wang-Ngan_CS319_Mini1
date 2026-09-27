@@ -256,14 +256,23 @@ footer button {
   display: grid;
   gap: 12px;
 }
-.job-item,
-.event-item {
+.job-item {
   background: #fff;
   border: 1px solid #dfe3e8;
   border-radius: 6px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.event-item {
+  background: #fff;
+  border: 1px solid #dfe3e8;
+  border-radius: 6px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr) 100px;
   align-items: center;
   gap: 20px;
 }
@@ -277,6 +286,15 @@ footer button {
   color: #6b7280;
   margin: 5px 0;
   font-size: 14px;
+}
+.event-details {
+  min-width: 0;
+}
+.event-item h2 {
+  min-height: 29px;
+}
+.event-item > .button {
+  justify-self: end;
 }
 .job-side {
   display: flex;
@@ -563,6 +581,12 @@ footer div:nth-child(3) {
   .event-item {
     align-items: start;
     flex-direction: column;
+  }
+  .event-item {
+    display: flex;
+  }
+  .event-item > .button {
+    align-self: stretch;
   }
   .job-side {
     width: 100%;

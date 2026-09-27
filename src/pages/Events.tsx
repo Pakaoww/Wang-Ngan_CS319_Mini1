@@ -17,7 +17,7 @@ export default function Events({ onRegister }: EventsProps) {
               {event.date.split(" ")[0]}
               <small>{event.date.split(" ")[1]}</small>
             </div>
-            <div>
+            <div className="event-details">
               <h2>{event.name}</h2>
               <p>
                 {event.date} · {event.time}

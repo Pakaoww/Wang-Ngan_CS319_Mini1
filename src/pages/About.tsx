@@ -2,7 +2,7 @@ const members = [
   {
     name: "Jatuporn Subin",
     email: "jatuporn.subi@bumail.net",
-    phone: "0999999999",
+    phone: "0956382140",
   },
   {
     name: "Nattapong Kanyarat",
