@@ -6,7 +6,6 @@ type Page =
   | "training"
   | "events"
   | "certification"
-  | "news"
   | "about"
   | "account"
   | "admin";
@@ -25,7 +24,6 @@ const links: { page: Page; label: string }[] = [
   { page: "training", label: "Training" },
   { page: "events", label: "Events" },
   { page: "certification", label: "Certification" },
-  { page: "news", label: "News" },
   { page: "about", label: "About Us" },
 ];
 
@@ -77,7 +75,6 @@ export default function Layout({
         <div>
           <strong>Support</strong>
           <button onClick={() => onNavigate("events")}>Events</button>
-          <button onClick={() => onNavigate("news")}>News & Articles</button>
           <button onClick={() => onNavigate("about")}>About Us</button>
         </div>
       </footer>

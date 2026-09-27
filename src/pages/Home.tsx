@@ -1,9 +1,9 @@
-import { articles, jobs } from "../data";
+import { jobs } from "../data";
 import type { Job } from "../data";
 import homepage from "../assets/pigai1.png";
 
 type HomeProps = {
-  onNavigate: (page: "jobs" | "training" | "news") => void;
+  onNavigate: (page: "jobs" | "training") => void;
   onJobSelect: (job: Job) => void;
 };
 
@@ -68,30 +68,6 @@ export default function Home({ onNavigate, onJobSelect }: HomeProps) {
           <button className="button" onClick={() => onNavigate("training")}>
             Browse Training
           </button>
-        </div>
-      </section>
-      <section className="container">
-        <div className="section-title">
-          <div>
-            <p className="eyebrow">NEWS & ARTICLES</p>
-            <h2>Learn something new</h2>
-          </div>
-          <button className="link-button" onClick={() => onNavigate("news")}>
-            View all articles →
-          </button>
-        </div>
-        <div className="grid three-columns">
-          {articles.map((article) => (
-            <article className="card" key={article.title}>
-              <span className="article-image">Article</span>
-              <p className="company">
-                {article.category} · {article.date}
-              </p>
-              <h3>{article.title}</h3>
-              <p>{article.text}</p>
-              <button className="link-button">Read more →</button>
-            </article>
-          ))}
         </div>
       </section>
     </>

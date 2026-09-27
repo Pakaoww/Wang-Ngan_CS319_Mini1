@@ -217,23 +217,3 @@ export const certifications = [
   },
 ];
 
-export const articles = [
-  {
-    title: "AI at the edge: What comes next",
-    category: "AI News",
-    date: "02 October 2024",
-    text: "How smaller, faster models are changing everyday products.",
-  },
-  {
-    title: "The practical reskilling guide",
-    category: "Career",
-    date: "28 September 2024",
-    text: "A simple way to build your next digital skill.",
-  },
-  {
-    title: "Why responsible AI is a team sport",
-    category: "Digital Technology",
-    date: "19 September 2024",
-    text: "The habits that make innovation useful and trustworthy.",
-  },
-];

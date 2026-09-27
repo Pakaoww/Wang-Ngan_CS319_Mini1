@@ -8,7 +8,6 @@ import Jobs from "./pages/Jobs";
 import Training from "./pages/Training";
 import Events from "./pages/Events";
 import Certification from "./pages/Certification";
-import News from "./pages/News";
 import Account from "./pages/Account";
 import Admin from "./pages/Admin";
 import About from "./pages/About";
@@ -19,7 +18,6 @@ type Page =
   | "training"
   | "events"
   | "certification"
-  | "news"
   | "about"
   | "account"
   | "admin";
@@ -67,7 +65,6 @@ export default function App() {
           onRegister={register}
         />
       )}
-      {page === "news" && <News />}
       {page === "about" && <About />}
       {page === "account" && (
         <Account loggedIn={loggedIn} onLogin={() => setModal("login")} />
@@ -103,6 +100,7 @@ export default function App() {
       {modal === "login" && (
         <Modal title="Login" onClose={() => setModal(null)}>
           <form
+            className="application-form"
             onSubmit={(event) => {
               event.preventDefault();
               localStorage.setItem("career-user", "true");
@@ -128,6 +126,7 @@ export default function App() {
       {modal === "apply" && (
         <Modal title="Apply for job" onClose={() => setModal(null)}>
           <form
+            className="application-form"
             onSubmit={(event) => {
               event.preventDefault();
               showMessage("Application submitted");
@@ -212,6 +211,7 @@ export default function App() {
       {modal === "register" && (
         <Modal title="Register" onClose={() => setModal(null)}>
           <form
+            className="registration-form"
             onSubmit={(event) => {
               event.preventDefault();
               showMessage("Registration successful");

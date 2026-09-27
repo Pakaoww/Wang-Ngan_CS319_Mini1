@@ -30,6 +30,9 @@ button {
   display: flex;
   align-items: center;
   gap: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 15;
 }
 .logo {
   background: none;
@@ -407,52 +410,121 @@ footer div:nth-child(3) {
   padding: 20px;
 }
 .modal {
-  width: min(450px, 100%);
+  width: min(480px, 100%);
   max-height: calc(100vh - 40px);
   overflow-y: auto;
-  background: #fff;
-  border-radius: 6px;
-  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 24px 70px #11182733;
+  padding: 32px;
   position: relative;
 }
 .modal h2 {
-  margin-top: 0;
+  color: #111827;
+  font-size: 27px;
+  letter-spacing: -0.4px;
+  margin: 0 36px 24px 0;
 }
 .close-button {
   position: absolute;
-  top: 8px;
-  right: 12px;
+  top: 18px;
+  right: 18px;
   background: none;
-  border: 0;
-  font-size: 25px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: #6b7280;
+  font-size: 23px;
+  height: 34px;
+  line-height: 1;
+  width: 34px;
+}
+.close-button:hover {
+  background: #f3f4f6;
+  color: #111827;
 }
 .modal form {
   display: grid;
-  gap: 14px;
+  gap: 16px;
 }
 .modal label {
   display: grid;
-  gap: 5px;
-  color: #4b5563;
-  font-size: 14px;
+  gap: 7px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
 }
 .modal label.checkbox-label {
   display: flex;
   align-items: flex-start;
   gap: 8px;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
 }
 .modal label.checkbox-label input {
   width: auto;
   margin-top: 4px;
 }
 .modal input,
+.modal select,
 .modal textarea {
-  border: 1px solid #cfd5dc;
-  border-radius: 4px;
-  padding: 10px;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #111827;
+  min-width: 0;
+  padding: 11px 12px;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+.modal input::placeholder,
+.modal textarea::placeholder {
+  color: #9ca3af;
+}
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+  background: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #2563eb1f;
+  outline: none;
 }
 .modal textarea {
-  min-height: 90px;
+  min-height: 100px;
+  resize: vertical;
+}
+.modal input[type="file"] {
+  background: #f9fafb;
+  padding: 8px;
+}
+.modal input[type="file"]::file-selector-button {
+  background: #eff6ff;
+  border: 0;
+  border-radius: 6px;
+  color: #1d4ed8;
+  cursor: pointer;
+  font-weight: 700;
+  margin-right: 10px;
+  padding: 7px 10px;
+}
+.modal .application-form,
+.modal .registration-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.modal:has(.application-form),
+.modal:has(.registration-form) {
+  width: min(720px, 100%);
+}
+.application-form label:has(textarea),
+.application-form label:has(input[type="file"]),
+.application-form .checkbox-label,
+.application-form > .button,
+.registration-form label:has(textarea),
+.registration-form label:nth-of-type(8),
+.registration-form .checkbox-label,
+.registration-form > .button {
+  grid-column: 1 / -1;
 }
 @media (max-width: 800px) {
   .header {
@@ -502,5 +574,12 @@ footer div:nth-child(3) {
   footer {
     grid-template-columns: 1fr 1fr;
     padding: 30px 25px;
+  }
+  .modal {
+    padding: 25px 20px;
+  }
+  .modal .application-form,
+  .modal .registration-form {
+    grid-template-columns: 1fr;
   }
 }
